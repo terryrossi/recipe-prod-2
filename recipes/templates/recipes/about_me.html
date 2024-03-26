@@ -1,0 +1,24 @@
+{% extends 'recipes/base.html' %} {% load static %} {% block content %}
+<div class="about-me">
+	<div class="profile-section">
+		<div class="profile-picture">
+			<!-- Update 'your-image.jpg' with the actual image name or an external URL -->
+			<img
+				src="{% static 'recipes/images/terry-rossi.png' %}"
+				alt="Terry Rossi" />
+		</div>
+		<div class="profile-content">
+			<p>
+				I'm Terry Rossi, a passionate developer with a love for cooking. Here's a bit more about my
+				professional background and interests.
+			</p>
+		</div>
+	</div>
+
+	<p>Contact me at: terryrossi!@gmail.com</p>
+	<ul>
+		<li><a href="https://www.terryrossi.com">Portfolio</a></li>
+		<li><a href="https://github.com/terryrossi">GitHub</a></li>
+	</ul>
+</div>
+{% endblock %}

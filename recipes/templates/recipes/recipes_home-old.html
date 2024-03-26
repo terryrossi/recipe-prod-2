@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<title>Recipe App</title>
+		<link
+			rel="stylesheet"
+			href="{% static 'recipes/css/recipes.css' %}" />
+	</head>
+	<body>
+		<div class="header">
+			{% if not user.is_authenticated %}
+			<a
+				href="{% url 'login' %}"
+				class="login-button"
+				>Login</a
+			>
+			{% else %}
+			<a
+				href="{% url 'logout' %}"
+				class="login-button"
+				>Logout</a
+			>
+			<p class="username">Welcome, {{ user.username }}</p>
+			{% endif %}
+			<h1 class="page-title">LES RECETTES DE LUCETTE</h1>
+		</div>
+
+		<div class="recipe-main-image">
+			<img
+				src="{% static 'recipes/images/recipes.webp' %}"
+				alt="Main image of the site" />
+		</div>
+		<div class="search-bar">
+			<form
+				action="{% url 'recipes:recipes_home' %}"
+				method="get">
+				<input
+					type="text"
+					name="q"
+					placeholder="Search for a recipe..."
+					value="{{ request.GET.search }}" />
+				<button type="submit">Search</button>
+			</form>
+		</div>
+		<div class="container">
+			{% for recipe in object_list %}
+			<div class="recipe-card">
+				<div class="recipe-image">
+					<img
+						src="{{ recipe.pic.url }}"
+						alt="{{ recipe.name }}" />
+				</div>
+				<div class="recipe-content">
+					<!-- <h2 class="recipe-name">{{ recipe.name }}</h2> -->
+					<h2 class="recipe-name">
+						<a href="{{ recipe.get_absolute_url }}">{{ recipe.name }}</a>
+					</h2>
+					<p class="recipe-description">{{ recipe.description }}</p>
+					<a
+						href="{{ recipe.get_absolute_url }}"
+						class="details-button"
+						>Details</a
+					>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="footer">© 2024 Recipe App - All rights reserved.</div>
+	</body>
+</html>

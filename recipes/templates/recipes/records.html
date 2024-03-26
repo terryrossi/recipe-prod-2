@@ -1,0 +1,21 @@
+{% extends 'recipes/base.html' %} {% load static %} {% block content %}
+
+<form
+	style="text-align: center"
+	action=""
+	method="POST">
+	{% csrf_token %} {{form}}
+	<button type="submit">search</button>
+</form>
+<br />
+{% if search_df %} {{search_df |safe}}
+
+<br />
+<p style="text-align: center">Cooking time per recipe</p>
+<img
+	style="text-align: center"
+	src="data:image/png;base64,{{ chart|safe }}" />
+{% else %}
+
+<h3>No data. {{ingredient_not_found}} {{recipe_not_found}}</h3>
+{% endif %} {% endblock %} ```

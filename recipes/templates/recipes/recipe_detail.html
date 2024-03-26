@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<title>{{ recipe.name }} - Recipe Details</title>
+		<link
+			rel="stylesheet"
+			href="{% static 'recipes/css/recipes.css' %}" />
+	</head>
+	<body>
+		<div class="header">
+			{% if not user.is_authenticated %}
+			<a
+				href="{% url 'login' %}"
+				class="login-button"
+				>Login</a
+			>
+			{% else %}
+			<a
+				href="{% url 'logout' %}"
+				class="login-button"
+				>Logout</a
+			>
+			<p class="username">Welcome, {{ user.username }}</p>
+
+			{% endif %}
+			<h1 class="page-title">LES RECETTES DE LUCETTE</h1>
+		</div>
+
+		<div class="container-detail">
+			<div class="recipe-image-detail">
+				<img
+					src="{{ recipe.pic.url }}"
+					alt="{{ recipe.name }}" />
+			</div>
+			<h1 class="recipe-name">{{ recipe.name }}</h1>
+			<div class="recipe-content-detail">
+				<div>
+					<p><strong>Description:</strong> {{ recipe.description }}</p>
+					<p><strong>Cooking Time:</strong> {{ recipe.cooking_time }} minutes</p>
+					<p><strong>Difficulty:</strong> {{ recipe.get_difficulty_display }}</p>
+				</div>
+				<div>
+					<!-- <p style="text-align: center"><strong>Ingredients :</strong></p> -->
+					<a
+						href="{% url 'ingredients:ingredients_home' %}"
+						style="text-decoration: none; color: inherit">
+						<p style="text-align: center"><strong>Ingredients :</strong></p>
+					</a>
+
+					<ul>
+						{% for ingredient in recipe.ingredients.all %}
+						<li>{{ ingredient.name }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<a
+				href="{% url 'recipes:recipes_home' %}"
+				class="details-button"
+				>Back to Recipes</a
+			>
+		</div>
+		<div class="footer">© 2024 Recipe App - All rights reserved.</div>
+	</body>
+</html>

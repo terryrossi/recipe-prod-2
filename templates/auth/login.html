@@ -1,0 +1,38 @@
+{% load static %}
+<head>
+	<title>Recipes Login</title>
+	<link
+		rel="stylesheet"
+		href="{% static 'recipes/css/login.css' %}" />
+</head>
+<body>
+	<div class="header">
+		<h1 class="page-title">LOGIN</h1>
+		<a
+			href="{% url 'recipes:recipes_home' %}"
+			class="other-button"
+			>Home</a
+		>
+	</div>
+
+	{% comment %} print heading {% endcomment %} {% comment %} check for error message {% endcomment
+	%} {% if error_message %}
+	<div class="error-message">{{ error_message }}</div>
+	{% endif %} {% comment %} print form {% endcomment %}
+	<form
+		action=""
+		method="POST">
+		{% comment %} add Django security token {% endcomment %} {% csrf_token %} {% comment %} print
+		form received from view {% endcomment %} {{form}} {% comment %} add button {% endcomment %}
+		<button type="submit">Login</button>
+	</form>
+	{% load socialaccount %}
+
+	<div class="google-button-container">
+		<a
+			class="google-button"
+			href="{% provider_login_url 'google' %}"
+			>Login with Google</a
+		>
+	</div>
+</body>
