@@ -26,8 +26,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
-
+# ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 # Application definition
 
@@ -96,23 +96,23 @@ WSGI_APPLICATION = 'recipe_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'task_database',  # MySQL database name
-        'USER': 'cf-python',  #  MySQL username
-        'PASSWORD': 'password',  #  MySQL password
-        'HOST': 'localhost',  #  database host
-        'PORT': '3306',  #  database port
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'task_database',  # MySQL database name
+#         'USER': 'cf-python',  #  MySQL username
+#         'PASSWORD': 'password',  #  MySQL password
+#         'HOST': 'localhost',  #  database host
+#         'PORT': '3306',  #  database port
+#     }
+# }
 
 
 
@@ -151,9 +151,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+# ]
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
