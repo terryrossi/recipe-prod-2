@@ -178,7 +178,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL='/login/'
 LOGIN_REDIRECT_URL='/'  # redirect to home page after login
 LOGOUT_REDIRECT_URL='/'  # redirect to home page after logout
-SITE_ID = 2  # added for allauth
+SITE_ID = 3  # added for allauth
 
 # Google Allauth settings
 AUTHENTICATION_BACKENDS = [
