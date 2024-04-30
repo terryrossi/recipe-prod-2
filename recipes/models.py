@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.conf import settings
 
 # Create your models here.
 
@@ -11,7 +12,7 @@ difficulty_choices = (
 )
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
-    userid = models.ForeignKey('users.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     description = models.TextField()
     ingredients = models.ManyToManyField('ingredients.Ingredient', related_name='recipes')
     cooking_time = models.PositiveIntegerField()

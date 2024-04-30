@@ -43,6 +43,11 @@
 		</div>
 		<div class="other-header">
 			<a
+				href="{% url 'recipes:recipes_home' %}"
+				class="other-button"
+				>Home</a
+			>
+			<a
 				href="{% url 'ingredients:ingredients_home' %}"
 				class="other-button"
 				>Ingredients</a
@@ -57,11 +62,13 @@
 				class="other-button"
 				>About me</a
 			>
+			{% if user.is_authenticated %}
 			<a
-				href="{% url 'recipes:recipes_home' %}"
+				href="{% url 'recipes:add_recipe' %}"
 				class="other-button"
-				>Home</a
+				>Add Recipe</a
 			>
+			{% endif %}
 		</div>
 		<div class="content">{% block content %}{% endblock content %}</div>
 		<div class="footer">© 2024 Recipe App - All rights reserved.</div>

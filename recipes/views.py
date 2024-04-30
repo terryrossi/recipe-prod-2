@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import ListView, DetailView
 from .models import Recipe
@@ -10,7 +10,7 @@ from .utils import get_username_from_id, get_chart
 
 #to protect class-based view
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import SearchForm
+from .forms import SearchForm, RecipeForm
 
 # Create your views here.
 class RecipeListView(ListView):
@@ -114,6 +114,22 @@ def records(request):
     # Load the sales/records.html template with the context dictionary
 
     return render(request, 'recipes/records.html', context)
+
+# create a view for the submission of new recipes
+@login_required
+def add_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.user = request.user
+            recipe.save()
+            form.save_m2m()
+            return redirect('recipes:recipe_detail',  pk=recipe.pk)
+    else:
+        form = RecipeForm()
+    return render(request, 'recipes/add_recipe.html', {'form': form})
+
 
 # Create a view for the about me page
 def about_me(request):

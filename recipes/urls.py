@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import RecipeListView, RecipeDetailView
-from .views import records, about_me
+from .views import records, about_me, add_recipe
 
 # we specify the app_name variable to avoid confusion with other apps
 app_name = 'recipes'
@@ -13,4 +13,5 @@ urlpatterns = [
     # path('', records, name='records'),
     path('search/', records, name='records'),
     path('about-me/', about_me, name='about_me'), 
+    path('add-recipe/', add_recipe, name='add_recipe'),
 ]

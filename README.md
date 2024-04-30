@@ -79,8 +79,16 @@ The finished application should meet the following technical requirements:
 - 2 super users were created for maintenance.
 - The original SQLite3 Database was converted to a PostgreSql DB for compatibility with Heroku.
 - The Google Oauth sttings have been updated in the Dev console to accomodate Local and Production execution.
+  **Google Oauth requires extra manipulation in admin. Must link social application with Google dev console Key and secret. Also need to match site_key in admin with settings.py**
+
+# Additional tasks for Deployment
+
+- Make sure to switch debug = True to False
+- Make sure to change Secret_key in Heroku
 
 # Link to the site: https://safe-atoll-52750-86a0b77e2141.herokuapp.com/
+
+User: bobwhite/RecAppBw75
 
 # Screen Shots:
 

@@ -28,8 +28,6 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['localhost']
-# ALLOWED_HOSTS = ['.herokuapp.com']
 ALLOWED_HOSTS = ['localhost','.herokuapp.com','safe-atoll-52750-86a0b77e2141.herokuapp.com']
 
 # Application definition
@@ -110,6 +108,7 @@ if os.environ.get('DATABASE_URL'):
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env) 
 
+# Mysql Database:
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -178,7 +177,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL='/login/'
 LOGIN_REDIRECT_URL='/'  # redirect to home page after login
 LOGOUT_REDIRECT_URL='/'  # redirect to home page after logout
-SITE_ID = 3  # added for allauth
+SITE_ID = 3  # 3 added for allauth in Prod and Local
 
 # Google Allauth settings
 AUTHENTICATION_BACKENDS = [
