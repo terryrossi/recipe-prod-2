@@ -1,0 +1,169 @@
+/* recipes/static/recipes/css/recipes.css */
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f9fa;
+	color: #333;
+}
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #627589;
+	margin: 20px;
+	position: relative;
+	color: white;
+	z-index: 1;
+}
+
+.page-title {
+	position: absolute; /* Position the title absolutely within the header */
+	width: 100%; /* Ensure the title spans the full width of the header */
+	left: 0; /* Align the title from the left edge */
+	text-align: center; /* Center the title text */
+	margin: 0; /* Remove default margin */
+	padding: 20px 0; /* Adjust padding as needed */
+	background-color: #627589;
+	color: white;
+	font-size: 24px;
+}
+
+.username {
+	margin-right: 20px;
+	color: white;
+	z-index: 2;
+}
+
+.container {
+	max-width: 1200px;
+	margin: auto;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.container-detail {
+	max-width: 800px;
+	margin: auto;
+	padding: 20px;
+	gap: 20px;
+}
+
+.recipe-card {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+.recipe-main-image img {
+	display: block; /* Ensure the image is a block element to center it */
+	max-height: auto; /* Image takes up to 75% of its container's width */
+	max-width: 75%;
+	margin: 0px auto 30px auto; /* Center the image horizontally */
+	border-radius: 9px;
+}
+
+.recipe-image img {
+	display: block; /* Ensure the image is a block element to center it */
+	max-height: 150px; /* Image takes up to 75% of its container's width */
+	max-width: auto;
+	margin-top: 10px;
+	margin-left: auto; /* Center the image horizontally */
+	margin-right: auto; /* Center the image horizontally */
+
+	border-radius: 9px;
+}
+
+.recipe-image-detail img {
+	display: block; /* Ensure the image is a block element to center it */
+	max-height: auto; /* Image takes up to 75% of its container's width */
+	max-width: 75%;
+	margin: 0 auto; /* Center the image horizontally */
+	border-radius: 9px;
+}
+
+.search-bar {
+	margin-bottom: 50px;
+	text-align: center;
+}
+.recipe-content {
+	padding: 15px;
+}
+
+.recipe-content-detail {
+	padding: 15px;
+	max-width: 75%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.recipe-content-detail ul {
+	text-align: center;
+	list-style-type: none;
+}
+
+.recipe-name {
+	text-align: center;
+	/* font-size: 1.2rem; */
+	text-decoration: none;
+	color: coral;
+	margin-bottom: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: coral;
+}
+
+.recipe-description {
+	font-size: 0.9rem;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.details-button {
+	background-color: #627589;
+	color: #ffffff;
+	padding: 10px 15px;
+	max-width: 75%;
+	margin: auto;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.footer {
+	text-align: center;
+	padding: 20px;
+	background-color: #627589;
+	color: white;
+	margin-top: 50px;
+}
+
+.login-button {
+	padding: 10px 20px;
+	margin-left: 10px;
+	background-color: #7e939f;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.login-button:hover,
+.login-button:focus {
+	background-color: #a7b0ba;
+	color: #ffffff;
+	text-decoration: none;
+}

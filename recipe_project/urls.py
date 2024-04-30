@@ -33,7 +33,7 @@ urlpatterns = [
     path('login/', include('allauth.urls')),
     path('ingredients/', include('ingredients.urls')),
     # path('ingredients/', include(('ingredients.urls', 'ingredients'), namespace='ingredients')),
-    path('recipes/', include('recipes.urls')),
+    # path('recipes/', include('recipes.urls')),
     
 
 ]
