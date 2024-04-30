@@ -72,3 +72,21 @@ The finished application should meet the following technical requirements:
 - In order to use Google Oauth for Login it is required to install django-allauth: pip install django-allauth
 - pip install pandas
 - pip install matplotlib
+
+# Deployment on Heroku
+
+- The project is Deployed on Heroku through it's conection to Github. So every commit is pushed to github and then to Heroku.
+- 2 super users were created for maintenance.
+- The original SQLite3 Database was converted to a PostgreSql DB for compatibility with Heroku.
+- The Google Oauth sttings have been updated in the Dev console to accomodate Local and Production execution.
+
+# Link to the site: https://safe-atoll-52750-86a0b77e2141.herokuapp.com/
+
+# Screen Shots:
+
+![Home page](media/screen-shots/home.png)
+![Recipe list](media/screen-shots/recipes.png)
+![Recipes details](media/screen-shots/details.png)
+![Ingredients](media/screen-shots/ingredients.png)
+![Analysis](media/screen-shots/analysis.png)
+![About me](media/screen-shots/about-me.png)
