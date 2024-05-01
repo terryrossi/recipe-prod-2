@@ -80,7 +80,7 @@ def records(request):
 
 
                 # add a new column to the dataframe to store the username of the author
-                search_df['author'] = search_df['userid_id'].apply(get_username_from_id)
+                # search_df['author'] = search_df['userid_id'].apply(get_username_from_id)
 
                 # add a new column to the dataframe to store the total number of recipes
                 search_df['total_recipes'] = total_recipes
