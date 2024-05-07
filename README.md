@@ -81,6 +81,10 @@ The finished application should meet the following technical requirements:
 - The Google Oauth sttings have been updated in the Dev console to accomodate Local and Production execution.
   **Google Oauth requires extra manipulation in admin. Must link social application with Google dev console Key and secret. Also need to match site_key in admin with settings.py**
 
+  **Heroku's filesystem is ephemeral, which means files uploaded during the runtime of the app aren't permanently saved on the server—they get wiped out whenever the dyno restarts (which can happen frequently). So we need to use a Cloud Storage Service to remedy. In our case here we will be using Amazon S3.**
+
+  - Create an Amazon S3 Bucket
+
 # Additional tasks for Deployment
 
 - Make sure to switch debug = True to False
